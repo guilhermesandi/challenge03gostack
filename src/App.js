@@ -12,16 +12,11 @@ function App() {
     })
   }, []);
 
-  /**
-   * Adicionar um repositório a sua API: Deve ser capaz de adicionar um novo 
-   * item na sua API através de um botão com o texto Adicionar e, após a criação, 
-   * deve ser capaz de exibir o nome dele após o cadastro.
-   */
   async function handleAddRepository() {
     const response = await api.post('repositories', {
-      title: "Desafio Node.js",
+      title: "Desafio ReactJS",
       url: "https://github.com/guilhermesandi/challenge02gostack",
-      techs: ["Node.js", "JavaScript"]
+      techs: ["ReactJS", "JavaScript"]
     });
 
     const repository = response.data;
@@ -29,26 +24,26 @@ function App() {
     setRepositories([...repositories, repository]);
   }
 
-  /**
-   * Remover um repositório da sua API: Para cada item da sua lista, deve possuir 
-   * um botão com o texto Remover que, ao clicar, irá chamar uma função para remover 
-   * esse item da lista do seu frontend e da sua API.
-   */
   async function handleRemoveRepository(id) {
-    // TODO
+    await api.delete(`repositories/${id}`);
+
+    setRepositories(repositories.filter(
+      repository => repository.id !== id
+    ));
   }
 
   return (
     <div>
       <ul data-testid="repository-list">
-        {repositories.map(repository => <li key={repository.id}>{repository.title}</li>)}
-        <li>
-          Repositório 1
+        {repositories.map(repository =>
+          <li key={repository.id}>
 
-          <button onClick={() => handleRemoveRepository(1)}>
-            Remover
-          </button>
-        </li>
+            {repository.title} - {repository.id}
+
+            <button onClick={() => handleRemoveRepository(repository.id)}>
+              Remover
+            </button>
+          </li>)}
       </ul>
 
       <button onClick={handleAddRepository}>Adicionar</button>
