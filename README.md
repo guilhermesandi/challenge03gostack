@@ -1,4 +1,4 @@
-<h1 align="center">Challenge 03 GoStack</h1>
+<h1 align="center">Desafio: Conceitos do ReactJS | GoStack</h1>
 
 <div align="center">
 
