@@ -8,7 +8,7 @@
 
 ## Sobre
 
-Esse repositório contém um exemplo básico de utilização do Front-end com ReactJS. Nela utilizaremos o back-end disponível neste [repositório](https://github.com/guilhermesandi/challenge02gostack).
+Esse repositório contém um exemplo básico de utilização do Front-end com ReactJS. Nela utilizaremos o back-end disponível neste [repositório](https://github.com/guilhermesandi/conceitos-nodejs).
 Essa aplicação irá adicionar repositórios ao clicar no botão "Adicionar", e remover o repositório com o botão "Remover".
 O objetivo é adicionar e remover do back-end e do front-end sem atualizar a página.
 
